@@ -28,3 +28,8 @@ WOW new things added
 # code block
 we are all in the gray rectangle
 nooooooooooooo
+```
+# >_<
+
+This is pretty *cool*!
+
