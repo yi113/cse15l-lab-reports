@@ -11,6 +11,8 @@ WOW new things added
 
 ![my image](https://static.wikia.nocookie.net/soul-knight/images/5/50/Druid_Baize.png/revision/latest/scale-to-width-down/127?cb=20200112103845)
 
+![my image](https://upload.wikimedia.org/wikipedia/commons/6/65/Blue_morpho_butterfly.jpg)
+
 >I'm a quote
 
 * one thing
