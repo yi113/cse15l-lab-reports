@@ -1,4 +1,8 @@
 # Week 2 Lab Report #
+Yiyang Chen  
+A17053204
+___
+
 **1. Install VScode**  
 Download VScode from your broswer and follow the prompted directions. When finished, open VScode and you should see an image similar to the one below.  
 ![image](VScodeStarting.jpg)  
