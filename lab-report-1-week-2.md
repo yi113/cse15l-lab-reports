@@ -40,7 +40,7 @@ Save the file into your location of choice (or simply skip and press enter), the
 Now, you should see two files added to your computer, the one with the "p" symbol is the public one, and that's the one that needs to be compied to your remote server  
 ![image](Keys.jpg)  
 Now, using the scp command, copy the "id_rsa.pub" file to the remote server under a directory called ".ssh" and name it authorized_keys.  
-The comand is as follows "scp ./ssh/id_rsa.pub cs15lwiaxk@ieng6.ucsd.edu:~/.ssh/authorized_keys". Of course, make sure to change the username and the specific path you are in in your current directory as needed.  
+The comand is as follows "scp ./ssh/id_rsa.pub cs15lwi22axk@ieng6.ucsd.edu:~/.ssh/authorized_keys". Of course, make sure to change the username and the specific path you are in in your current directory as needed.  
 By now, you should be able to ssh without typing passwords and the key file should be stored in your remote server's ".ssh" directory.  
 ![image](AuthorizedKeys.jpg)  
 ___
