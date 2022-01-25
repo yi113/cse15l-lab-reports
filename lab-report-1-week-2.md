@@ -4,7 +4,7 @@ A17053204
 ___
 
 **1. Install VScode**  
-Download VScode from your broswer and follow the prompted directions. When finished, open VScode and you should see an image similar to the one below.  
+Download VScode from your broswer and follow the prompted directions. [Download VScode](https://code.visualstudio.com/download) When finished, open VScode and you should see an image similar to the one below.  
 ![image](VScodeStarting.jpg)  
 ___
 **2. Remotely Connecting**  
@@ -25,14 +25,14 @@ Some commands you should try are `ls`, `ls -lat`, `cd`, `cd ~`, `mkdir newDir`
 `ls` for example, lists the content(folders and files) inside your current directory. The "-" symbol is a way to sort of add more functions to the command. In this case, "a" means also show hidden files, "l" means to show in a longer format that includes more information, and "t" means the contens are sorted by date of modification.
 ___  
 **4. Moving Files with scp**  
-One very useful comman is scp, this allows files to be copied from the remote server to your own computer and viceversa. To do so, exit your remote server by enterying "exit", then, type the command with the following syntax  `scp \<source location\> \<destination\>`  
+One very useful comman is scp, this allows files to be copied from the remote server to your own computer and viceversa. To do so, exit your remote server by enterying "exit", then, type the command with the following syntax  `scp <source location> <destination>`  
 For example, from the previous image, you can see I have a "WhereAmI.java" file on my remote computer. I will now proceed to copy it to my own computer by typing `scp cs15lwi22axk@ieng6.ucsd.edu:~/WhereAmI.java`.  
 Notice the destination as just a single ".", this simply means current directory. 
 ![image](Copy1.jpg)  
 ![image](Copy2.jpg)   
 And the file is now in my local computer.
 ___
-**5. Setting an SSH Key**
+**5. Setting an SSH Key**  
 Now one thing you might've noticed, login in and cp both required you to type passwords, which can get very tedious. But there's a way to skip that process.  
 For that, enter your local termial and type `ssh-keygen` and you should see the following.  
 ![image](sshKeyGen.jpg)  
@@ -40,16 +40,20 @@ Save the file into your location of choice (or simply skip and press enter), the
 Now, you should see two files added to your computer, the one with the "p" symbol is the public one, and that's the one that needs to be compied to your remote server  
 ![image](Keys.jpg)  
 Now, using the scp command, copy the "id_rsa.pub" file to the remote server under a directory called ".ssh" and name it authorized_keys.  
-The comand is as follows "scp ./ssh/id_rsa.pub cs15lwi22axk@ieng6.ucsd.edu:~/.ssh/authorized_keys". Of course, make sure to change the username and the specific path you are in in your current directory as needed.  
+The comand is as follows `scp ./ssh/id_rsa.pub cs15lwi22axk@ieng6.ucsd.edu:~/.ssh/authorized_keys`. Of course, make sure to change the username and the specific path you are in in your current directory as needed.  
 By now, you should be able to ssh without typing passwords and the key file should be stored in your remote server's ".ssh" directory.  
 ![image](AuthorizedKeys.jpg)  
 ___
 **6. Optimizing Remote Running**  
 If you only need to run a few commands, or maybe literally just one, then there's a quicker way to do so then login in to your server.  
-<<<<<<< HEAD
-By typing `ssh cs15lwi22axk@ieng6.ucsd.edu \<command>` on your local terminal, you can actually get results from your remote computer. 
+By typing `ssh cs15lwi22axk@ieng6.ucsd.edu <command>` on your local terminal, you can actually get results from your remote computer. 
 ![image](RunningRemoteCommands.jpg)
-=======
-By typing "ssh cs15lwi22axk@ieng6.ucsd.edu \<command>" on your local terminal, you can actually get results from your remote computer. 
-![image](RunningRemoteCommands.jpg)
->>>>>>> 77980218046a618de82fceb7387b70e98396c3f6
+This can save 4 keystrokes(type exit in remote server) if your intention is to simply check the result of some command but want to stay in your local. 
+But the really convinent trick here is to use up and down arrow keys to navigate previously typed commands. 
+For example, if we want to run WhereAmI in the remote server, we can first type `ssh cs15lwi22axk@ieng6.ucsd.edu javac WhereAmI.java`. Then to run the, instead of typing the long username again, we can simply press the up botton and remove the "c" from `javac` and `java` from "WhereAmI.java"
+![image](UpArrowCommand.jpg)
+This way, by not having to type everything up to `javac WhereAmI.java`, we save about 30 keystroks with just 1 press of the up arrow.
+Alternatively, you can also just combine the two commands you want to run together in such a format `ssh cs15wi22axk@ieng6.ucsd.edu "javac WhereAmi.java; java WhereAmI"`  
+Put the commands under double quotes and then separate them using semicolon.  
+This will also save about 30 keystrokes compared to typeing out the ssh login twice. And if you only need to run it once, this method also saves an additional 10 strokes because you can just type all the commands out at once without needing to delete `.java` and then keep moving to the left to delete the "c" from `javac`.
+![image](CommandsTogether.jpg)
