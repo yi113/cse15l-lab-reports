@@ -1,12 +1,7 @@
 Yiyang Chen  
 A17053204
 
-# Lab Report 4 #
-## Links ##  
-[my repository](https://github.com/yi113/markdown-parse)  
-[reviewed repository](https://github.com/yih365/markdown-parse)  
-
-[link](/bar\*)
+# Lab Report 5 #
 
 ## How To Find Output Differences  
 From lab 9, I've done enough so that the results can be displayed as such  
